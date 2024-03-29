@@ -1,0 +1,22 @@
+{
+  "name": "codigovscode",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maxwell0207/codigovscode.git"
+  },
+  "author": "Maxwell Gonçalves",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/maxwell0207/codigovscode/issues"
+  },
+  "homepage": "https://github.com/maxwell0207/codigovscode#readme",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
