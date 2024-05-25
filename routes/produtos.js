@@ -4,17 +4,16 @@ var router = express.Router();
 const produtoController = require('../controllers/produtoController');
 const corMiddleware = require('../middlewares/corMiddleware');
 
-
 /* GET produtos listing. */
-router.get('/', corMiddleware.validateColor, produtoController.findAll);
+router.get('/', produtoController.findAll);
 
-/* PUT produtos listing. */
-router.put('/', produtoController.update);
+/* PUT produtos by ID. */
+router.put('/:id', produtoController.update);
 
-  /* POST produtos listing. */
-router.post('/', produtoController.save);
+/* POST produtos listing. */
+router.post('/', corMiddleware.validateColor, produtoController.save);
 
-  /* DELETE produtos listing. */
+/* DELETE produtos by ID. */
 router.delete('/:id', produtoController.remove);
 
 module.exports = router;

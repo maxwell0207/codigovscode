@@ -5,13 +5,13 @@ const clienteController = require('../controllers/clienteController')
 const corMiddleware = require('../middlewares/corMiddleware');
 
 /* GET clientes listing. */
-router.get('/', corMiddleware.validateColor, clienteController.findAll);
+router.get('/', clienteController.findAll);
 
 /* PUT clientes listing. */
 router.put('/', clienteController.update);
 
   /* POST clientes listing. */
-router.post('/', clienteController.save);
+router.post('/', corMiddleware.validateColor, clienteController.save);
 
   /* DELETE clientes listing. */
 router.delete('/:id', clienteController.remove);
