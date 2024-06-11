@@ -1,7 +1,7 @@
 const connection = require('../configs/dbConfiguration');
 
 const findAll = async () => {
-    const [clientes] = await (await connection)
+    const [clientes] = await connection
         .execute('SELECT * FROM clientes');
     return clientes;
 }
