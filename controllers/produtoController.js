@@ -11,7 +11,7 @@ const findAll = async (request, response) => {
         return response.status(200).json(cachedProdutos);
     } else {
         const produtos = await produtoService.findAll();
-        cache.set(cacheKey, produtos, 60); // Cache por 60 segundos
+        cache.set(cacheKey, produtos, 30); // Cache por 30 segundos
         console.log('Dados armazenados no cache para a URL:', request.originalUrl);
         return response.status(200).json(produtos);
     }
