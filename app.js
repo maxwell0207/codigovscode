@@ -9,6 +9,7 @@ const usersRouter = require('./routes/users');
 const produtosRouter = require('./routes/produtos');
 const clientesRouter = require('./routes/clientes');
 
+const loginRouter = require('./routes/login');
 const produtoController = require('./controllers/produtoController');
 const clienteController = require('./controllers/clienteController');
 
@@ -41,7 +42,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/produtos', cacheMiddleware, produtosRouter);
 app.use('/clientes', cacheMiddleware, clientesRouter);
-
+app.use('/login', loginRouter);
 app.use(function(req, res, next) {
    res.status(404).send('Not Found');
 });
